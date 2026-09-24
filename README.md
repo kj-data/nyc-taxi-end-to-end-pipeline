@@ -70,4 +70,33 @@ Review the proposed changes and type `yes` to confirm.
 
 The GCS bucket and BigQuery dataset used in this project were already created in Google Cloud and were imported into Terraform state. Therefore, running `terraform plan` against the current configuration should show no changes when the infrastructure is already synchronized with Terraform.
 
+## Docker
 
+Docker Compose is used to run Kestra and the dbt pipeline in a containerized environment.
+
+The project includes:
+
+* Kestra for workflow orchestration and scheduling
+* dbt for data transformation in BigQuery
+* A Kestra flow in flows/ for the GCP taxi pipeline
+
+### How to run
+
+Clone the repository:
+
+```bash
+git clone https://github.com/kj-data/nyc-taxi-end-to-end-pipeline.git
+cd nyc-taxi-end-to-end-pipeline
+```
+
+Configure the required GCP credentials and dbt connection settings locally.
+
+Start Kestra and dbt:
+
+
+
+```bash
+docker compose up --build
+```
+
+GCP credentials are excluded from Git and must be configured locally.
