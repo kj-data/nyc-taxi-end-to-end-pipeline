@@ -70,7 +70,7 @@ Review the proposed changes and type `yes` to confirm.
 
 The GCS bucket and BigQuery dataset used in this project were already created in Google Cloud and were imported into Terraform state. Therefore, running `terraform plan` against the current configuration should show no changes when the infrastructure is already synchronized with Terraform.
 
-## Docker
+## Docker: Kestra and dbts
 
 Docker Compose is used to run Kestra and the dbt pipeline in a containerized environment.
 
@@ -100,3 +100,18 @@ docker compose up --build
 ```
 
 GCP credentials are excluded from Git and must be configured locally.
+
+### Data Quality Testing
+
+The dbt project includes **34 data quality tests**, covering uniqueness, null checks, accepted values, referential integrity, and custom business rules.
+
+The custom test `trips_invalid_time_with_fare` identifies trips where:
+
+* pickup time is equal to or later than dropoff time,
+* fare amount is greater than 0, and
+* trip distance is non-zero.
+
+The test currently identifies **44 anomalous trips** requiring further investigation.
+
+**Latest dbt test run:** 34 tests — **33 passed, 1 failed** (44 rows identified by the custom business-rule test).
+
