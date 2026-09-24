@@ -6,3 +6,11 @@ terraform/terraform.tfvars
 
 # GCP credentials
 terraform/credentials/
+
+# dbt
+dbt/target/
+dbt/dbt_packages/
+
+# Python
+__pycache__/
+*.pyc
