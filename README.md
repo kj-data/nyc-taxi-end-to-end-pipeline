@@ -115,3 +115,18 @@ The test currently identifies **44 anomalous trips** requiring further investiga
 
 **Latest dbt test run:** 34 tests — **33 passed, 1 failed** (44 rows identified by the custom business-rule test).
 
+### Continuous Integration (CI)
+
+The project includes a simple **Continuous Integration (CI)** workflow using GitHub Actions to automatically validate the dbt project when changes are pushed to the `main` branch or submitted through a pull request.
+
+The workflow:
+
+1. Checks out the repository.
+2. Sets up Python 3.11.
+3. Installs `dbt-bigquery`.
+4. Installs the dbt dependencies.
+5. Runs `dbt parse` to validate the dbt project structure and configuration.
+
+The workflow is configured to run when files under the `dbt/` directory are modified.
+
+This provides an automated validation step before changes are considered ready, helping detect dbt configuration or parsing errors early in the development workflow.
