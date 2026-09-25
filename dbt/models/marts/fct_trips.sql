@@ -30,7 +30,7 @@ select
     trips.dropoff_datetime,
     trips.store_and_fwd_flag,
 
-    -- Trip metrics
+    -- Trip metric
     trips.passenger_count,
     trips.trip_distance,
     trips.trip_type,
