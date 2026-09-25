@@ -31,6 +31,5 @@ jobs:
         working-directory: ./dbt
 
       - name: Validate dbt project
-        run: dbt parse
+        run: dbt parse --profiles-dir ..
         working-directory: ./dbt
-        
