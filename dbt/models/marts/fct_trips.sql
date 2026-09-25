@@ -34,7 +34,14 @@ select
     trips.passenger_count,
     trips.trip_distance,
     trips.trip_type,
+
     {{ get_trip_duration_minutes('trips.pickup_datetime', 'trips.dropoff_datetime') }} as trip_duration_minutes,
+
+    CASE
+        WHEN {{ get_trip_duration_minutes('trips.pickup_datetime', 'trips.dropoff_datetime') }} < 5 THEN 'short'
+        WHEN {{ get_trip_duration_minutes('trips.pickup_datetime', 'trips.dropoff_datetime') }} < 20 THEN 'medium'
+        ELSE 'long'
+    END AS trip_duration_category,
 
     -- Payment breakdown
     trips.fare_amount,
