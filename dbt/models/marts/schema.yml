@@ -104,6 +104,9 @@ models:
       - name: trip_duration_minutes
         description: Trip duration in minutes (calculated using cross-database macro)
         data_type: bigint
+      - name: trip_duration_category
+        description: Trip duration category based on trip duration in minutes
+        data_type: string
       - name: fare_amount
         description: Time and distance fare
         data_type: numeric
