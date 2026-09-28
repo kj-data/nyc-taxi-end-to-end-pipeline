@@ -130,3 +130,33 @@ The workflow:
 The workflow is configured to run when files under the `dbt/` directory are modified.
 
 This provides an automated validation step before changes are considered ready, helping detect dbt configuration or parsing errors early in the development workflow.
+
+
+## Dashboard
+
+The final dashboard is available here:
+
+**[NYC Taxi Analytics Dashboard](https://datastudio.google.com/s/rXgknptOQNs)**
+
+A screenshot of the dashboard is also included in the repository for reference:
+
+![NYC Taxi Analytics Dashboard](images/dashboard.png)
+
+## Questions the Dashboard Answers
+
+This Looker Studio dashboard analyzes New York City taxi trips from 2019 to 2021 to answer the following business questions:
+
+1. **What is the size and typical value of a trip?**
+   The scorecards show the average trip distance (in miles) and the average fare per trip.
+
+2. **How does demand change over time?**
+   The time series chart shows monthly trip volume for Yellow and Green taxis, making it easy to spot seasonality and the sharp drop in 2020.
+
+3. **Which days and hours have the highest demand?**
+   The pivot table of weekday by pickup hour reveals peak hours and the busiest days of the week.
+
+4. **Which zones generate the most revenue?**
+   The top 10 zones by total amount show where the business is concentrated, with the airports (JFK and LaGuardia) leading.
+
+5. **How do passengers pay?**
+   The payment method chart compares the total amount between credit card and cash.

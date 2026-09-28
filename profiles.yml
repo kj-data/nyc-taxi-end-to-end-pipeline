@@ -10,3 +10,12 @@ taxi_rides_ny:
       threads: 4
       keyfile: /usr/app/terraform/credentials/terraform_nytaxi.json
       location: us-central1
+
+    prod:
+      type: bigquery
+      method: service-account
+      project: elt-pipeline-with-kestra
+      dataset: dbt_kjauregui
+      threads: 4
+      keyfile: /usr/app/terraform/credentials/terraform_nytaxi.json
+      location: us-central1

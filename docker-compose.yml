@@ -81,9 +81,10 @@ services:
     image: my-dbt-bigquery:latest
     container_name: dbt_bq_service
     volumes:
-      # Monta tu proyecto local
-      - .:/usr/app
+    - .:/usr/app
     environment:
       - DBT_PROFILES_DIR=/usr/app
-    command: run
+    working_dir: /usr/app/dbt
+    entrypoint: ["/bin/bash", "-c"]
+    command: ["tail -f /dev/null"]
     
