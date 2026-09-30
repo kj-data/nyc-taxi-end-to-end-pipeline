@@ -2,15 +2,37 @@
 .terraform/
 terraform.tfstate
 terraform.tfstate.*
-terraform/terraform.tfvars
+.terraform.tfstate.lock.info
+*.tfvars
+!terraform.tfvars.example
 
-# GCP credentials
+# GCP credentials y secretos
 terraform/credentials/
+*credentials*.json
+*.json.key
+.env
+.env.*
+!.env.example
 
 # dbt
+.user.yml
+logs/
+dbt/logs/
 dbt/target/
 dbt/dbt_packages/
+dbt/dbt_modules/
 
 # Python
 __pycache__/
 *.pyc
+.venv/
+venv/
+
+# Kestra
+kestra-data/
+*.log
+
+# Editor / sistema
+.vscode/
+.idea/
+.DS_Store
